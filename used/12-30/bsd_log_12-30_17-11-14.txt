@@ -1,0 +1,271 @@
+2024-12-30 17:11:14.956604
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5769}}
+
+2024-12-30 17:11:15.001432
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5755}}
+
+2024-12-30 17:11:15.269667
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5755}}
+
+2024-12-30 17:11:15.314874
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5789}}
+
+2024-12-30 17:11:15.587042
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5789}}
+
+2024-12-30 17:11:15.676592
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5738}}
+
+2024-12-30 17:11:15.902155
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5738}}
+
+2024-12-30 17:11:15.906938
+BsdRadarObjInfo {x=0, y=0, confidence=29, raw=BsdRadarObjRaw {distance=0, theta=0, velocity=0, power=0}}
+BsdRadarObjInfo {x=0, y=0, confidence=25, raw=BsdRadarObjRaw {distance=0, theta=0, velocity=0, power=0}}
+
+2024-12-30 17:11:15.947047
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5770}}
+
+2024-12-30 17:11:16.036481
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5770}}
+
+2024-12-30 17:11:16.127233
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5743}}
+
+2024-12-30 17:11:16.262812
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5743}}
+
+2024-12-30 17:11:16.351485
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5735}}
+
+2024-12-30 17:11:16.441411
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5735}}
+
+2024-12-30 17:11:16.486901
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5735}}
+
+2024-12-30 17:11:16.891728
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5735}}
+
+2024-12-30 17:11:17.072432
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5790}}
+BsdRadarObjInfo {x=-12, y=110, confidence=0, raw=BsdRadarObjRaw {distance=11046, theta=0, velocity=-47, power=105}}
+BsdRadarObjInfo {x=-18, y=113, confidence=0, raw=BsdRadarObjRaw {distance=11309, theta=0, velocity=-65, power=88}}
+
+2024-12-30 17:11:17.252025
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5790}}
+BsdRadarObjInfo {x=-12, y=110, confidence=0, raw=BsdRadarObjRaw {distance=11046, theta=0, velocity=-47, power=105}}
+BsdRadarObjInfo {x=-18, y=113, confidence=0, raw=BsdRadarObjRaw {distance=11309, theta=0, velocity=-65, power=88}}
+
+2024-12-30 17:11:17.296685
+BsdRadarObjInfo {x=0, y=0, confidence=33, raw=BsdRadarObjRaw {distance=0, theta=0, velocity=0, power=0}}
+BsdRadarObjInfo {x=0, y=0, confidence=22, raw=BsdRadarObjRaw {distance=0, theta=0, velocity=0, power=0}}
+
+2024-12-30 17:11:17.430937
+BsdRadarObjInfo {x=0, y=0, confidence=33, raw=BsdRadarObjRaw {distance=0, theta=0, velocity=0, power=0}}
+BsdRadarObjInfo {x=0, y=0, confidence=22, raw=BsdRadarObjRaw {distance=0, theta=0, velocity=0, power=0}}
+
+2024-12-30 17:11:17.476551
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5761}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=4471, theta=0, velocity=0, power=426}}
+
+2024-12-30 17:11:17.610593
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5761}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=4471, theta=0, velocity=0, power=426}}
+
+2024-12-30 17:11:17.791493
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5784}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=8153, theta=0, velocity=0, power=352}}
+BsdRadarObjInfo {x=-19, y=134, confidence=0, raw=BsdRadarObjRaw {distance=13413, theta=0, velocity=-35, power=82}}
+
+2024-12-30 17:11:17.881973
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5784}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=8153, theta=0, velocity=0, power=352}}
+BsdRadarObjInfo {x=-19, y=134, confidence=0, raw=BsdRadarObjRaw {distance=13413, theta=0, velocity=-35, power=82}}
+
+2024-12-30 17:11:17.972262
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5784}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=8153, theta=0, velocity=0, power=352}}
+BsdRadarObjInfo {x=-19, y=134, confidence=0, raw=BsdRadarObjRaw {distance=13413, theta=0, velocity=-35, power=82}}
+
+2024-12-30 17:11:18.242240
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5784}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=8153, theta=0, velocity=0, power=352}}
+BsdRadarObjInfo {x=-19, y=134, confidence=0, raw=BsdRadarObjRaw {distance=13413, theta=0, velocity=-35, power=82}}
+
+2024-12-30 17:11:18.286209
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5633}}
+
+2024-12-30 17:11:18.421230
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5633}}
+
+2024-12-30 17:11:18.467278
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5635}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=2104, theta=0, velocity=0, power=2619}}
+
+2024-12-30 17:11:18.601129
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5635}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=2104, theta=0, velocity=0, power=2619}}
+
+2024-12-30 17:11:18.736735
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5787}}
+
+2024-12-30 17:11:18.827424
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5787}}
+
+2024-12-30 17:11:18.871538
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5715}}
+
+2024-12-30 17:11:18.961706
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5715}}
+
+2024-12-30 17:11:18.966467
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5715}}
+
+2024-12-30 17:11:19.187038
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5780}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=10520, theta=0, velocity=0, power=144}}
+
+2024-12-30 17:11:19.503541
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5780}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=10520, theta=0, velocity=0, power=144}}
+
+2024-12-30 17:11:19.636612
+
+2024-12-30 17:11:19.770975
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5886}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=7364, theta=0, velocity=0, power=488}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=7101, theta=0, velocity=0, power=424}}
+
+2024-12-30 17:11:19.861481
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5886}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=7364, theta=0, velocity=0, power=488}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=7101, theta=0, velocity=0, power=424}}
+
+2024-12-30 17:11:19.906975
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=2367, theta=0, velocity=0, power=2082}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=2104, theta=0, velocity=0, power=2014}}
+
+2024-12-30 17:11:20.131727
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=2367, theta=0, velocity=0, power=2082}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=2104, theta=0, velocity=0, power=2014}}
+
+2024-12-30 17:11:20.222110
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=2104, theta=0, velocity=0, power=2838}}
+
+2024-12-30 17:11:20.402260
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=2104, theta=0, velocity=0, power=2838}}
+
+2024-12-30 17:11:20.405790
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=6044}}
+
+2024-12-30 17:11:20.491928
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=6044}}
+
+2024-12-30 17:11:20.582257
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5871}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=1841, theta=0, velocity=0, power=1976}}
+
+2024-12-30 17:11:20.626299
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5871}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=1841, theta=0, velocity=0, power=1976}}
+
+2024-12-30 17:11:20.715356
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5792}}
+
+2024-12-30 17:11:20.762316
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5792}}
+
+2024-12-30 17:11:20.807064
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5292}}
+
+2024-12-30 17:11:20.941707
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5292}}
+
+2024-12-30 17:11:21.032208
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=6527}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=526, theta=0, velocity=0, power=2535}}
+
+2024-12-30 17:11:21.122075
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=6527}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=526, theta=0, velocity=0, power=2535}}
+
+2024-12-30 17:11:21.212058
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=6566}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=1841, theta=0, velocity=0, power=1764}}
+
+2024-12-30 17:11:21.346718
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=6566}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=1841, theta=0, velocity=0, power=1764}}
+
+2024-12-30 17:11:21.391073
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=10783, theta=0, velocity=0, power=102}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=10520, theta=0, velocity=0, power=98}}
+
+2024-12-30 17:11:21.482077
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=10783, theta=0, velocity=0, power=102}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=10520, theta=0, velocity=0, power=98}}
+
+2024-12-30 17:11:21.571455
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=6125}}
+
+2024-12-30 17:11:21.797192
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=6125}}
+
+2024-12-30 17:11:21.887125
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5307}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=526, theta=0, velocity=0, power=1390}}
+
+2024-12-30 17:11:22.021139
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5307}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=526, theta=0, velocity=0, power=1390}}
+
+2024-12-30 17:11:22.066749
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5777}}
+
+2024-12-30 17:11:22.156549
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5777}}
+
+2024-12-30 17:11:22.247292
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=6055}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=14202, theta=0, velocity=0, power=60}}
+BsdRadarObjInfo {x=-9, y=157, confidence=0, raw=BsdRadarObjRaw {distance=15780, theta=0, velocity=-45, power=33}}
+
+2024-12-30 17:11:22.336443
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=6055}}
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=14202, theta=0, velocity=0, power=60}}
+BsdRadarObjInfo {x=-9, y=157, confidence=0, raw=BsdRadarObjRaw {distance=15780, theta=0, velocity=-45, power=33}}
+
+2024-12-30 17:11:22.381691
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5723}}
+
+2024-12-30 17:11:22.471815
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5723}}
+
+2024-12-30 17:11:22.516101
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5787}}
+
+2024-12-30 17:11:22.606713
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5787}}
+
+2024-12-30 17:11:22.697438
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5746}}
+
+2024-12-30 17:11:22.787100
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5746}}
+
+2024-12-30 17:11:22.876538
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5730}}
+
+2024-12-30 17:11:22.966723
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=0, velocity=0, power=5730}}
+
+2024-12-30 17:11:23.056147
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=-1, velocity=0, power=5731}}
+
+2024-12-30 17:11:23.146460
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=-1, velocity=0, power=5731}}
+
+2024-12-30 17:11:23.190966
+BsdRadarObjInfo {x=100, y=0, confidence=0, raw=BsdRadarObjRaw {distance=263, theta=1, velocity=0, power=5787}}
+
