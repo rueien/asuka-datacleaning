@@ -1,0 +1,233 @@
+2025-01-02 15:56:30.356483
+BsdImageObjInfo {x=0, y=0, confidence=52, raw=BsdImageObjRaw {left=0, top=65, width=39, height=38}}
+BsdImageObjInfo {x=0, y=0, confidence=45, raw=BsdImageObjRaw {left=150, top=53, width=30, height=34}}
+BsdImageObjInfo {x=0, y=0, confidence=32, raw=BsdImageObjRaw {left=97, top=65, width=36, height=18}}
+BsdImageObjInfo {x=0, y=0, confidence=24, raw=BsdImageObjRaw {left=243, top=69, width=34, height=30}}
+BsdImageObjInfo {x=0, y=0, confidence=21, raw=BsdImageObjRaw {left=53, top=62, width=36, height=16}}
+
+2025-01-02 15:56:30.583247
+BsdImageObjInfo {x=0, y=0, confidence=40, raw=BsdImageObjRaw {left=1, top=75, width=46, height=44}}
+BsdImageObjInfo {x=0, y=0, confidence=39, raw=BsdImageObjRaw {left=168, top=80, width=24, height=20}}
+BsdImageObjInfo {x=0, y=0, confidence=38, raw=BsdImageObjRaw {left=109, top=80, width=30, height=16}}
+BsdImageObjInfo {x=0, y=0, confidence=23, raw=BsdImageObjRaw {left=140, top=80, width=28, height=16}}
+BsdImageObjInfo {x=0, y=0, confidence=23, raw=BsdImageObjRaw {left=258, top=68, width=36, height=40}}
+BsdImageObjInfo {x=0, y=0, confidence=22, raw=BsdImageObjRaw {left=223, top=74, width=22, height=28}}
+
+2025-01-02 15:56:31.037214
+BsdImageObjInfo {x=0, y=0, confidence=35, raw=BsdImageObjRaw {left=149, top=72, width=28, height=32}}
+BsdImageObjInfo {x=0, y=0, confidence=34, raw=BsdImageObjRaw {left=87, top=83, width=32, height=20}}
+BsdImageObjInfo {x=0, y=0, confidence=25, raw=BsdImageObjRaw {left=202, top=76, width=24, height=26}}
+BsdImageObjInfo {x=0, y=0, confidence=24, raw=BsdImageObjRaw {left=241, top=80, width=36, height=36}}
+BsdImageObjInfo {x=0, y=0, confidence=22, raw=BsdImageObjRaw {left=0, top=83, width=24, height=38}}
+BsdImageObjInfo {x=0, y=0, confidence=19, raw=BsdImageObjRaw {left=115, top=76, width=36, height=26}}
+
+2025-01-02 15:56:31.150311
+BsdImageObjInfo {x=0, y=0, confidence=35, raw=BsdImageObjRaw {left=149, top=72, width=28, height=32}}
+BsdImageObjInfo {x=0, y=0, confidence=34, raw=BsdImageObjRaw {left=87, top=83, width=32, height=20}}
+BsdImageObjInfo {x=0, y=0, confidence=25, raw=BsdImageObjRaw {left=202, top=76, width=24, height=26}}
+BsdImageObjInfo {x=0, y=0, confidence=24, raw=BsdImageObjRaw {left=241, top=80, width=36, height=36}}
+BsdImageObjInfo {x=0, y=0, confidence=22, raw=BsdImageObjRaw {left=0, top=83, width=24, height=38}}
+BsdImageObjInfo {x=0, y=0, confidence=19, raw=BsdImageObjRaw {left=115, top=76, width=36, height=26}}
+
+2025-01-02 15:56:32.481405
+BsdImageObjInfo {x=0, y=0, confidence=41, raw=BsdImageObjRaw {left=280, top=78, width=36, height=42}}
+BsdImageObjInfo {x=0, y=0, confidence=40, raw=BsdImageObjRaw {left=119, top=93, width=32, height=16}}
+BsdImageObjInfo {x=0, y=0, confidence=36, raw=BsdImageObjRaw {left=1, top=86, width=34, height=46}}
+BsdImageObjInfo {x=0, y=0, confidence=35, raw=BsdImageObjRaw {left=183, top=94, width=26, height=20}}
+BsdImageObjInfo {x=0, y=0, confidence=29, raw=BsdImageObjRaw {left=38, top=85, width=32, height=14}}
+BsdImageObjInfo {x=0, y=0, confidence=20, raw=BsdImageObjRaw {left=157, top=93, width=26, height=16}}
+
+2025-01-02 15:56:34.215337
+BsdImageObjInfo {x=0, y=0, confidence=41, raw=BsdImageObjRaw {left=280, top=78, width=36, height=42}}
+BsdImageObjInfo {x=0, y=0, confidence=40, raw=BsdImageObjRaw {left=119, top=93, width=32, height=16}}
+BsdImageObjInfo {x=0, y=0, confidence=36, raw=BsdImageObjRaw {left=1, top=86, width=34, height=46}}
+BsdImageObjInfo {x=0, y=0, confidence=35, raw=BsdImageObjRaw {left=183, top=94, width=26, height=20}}
+BsdImageObjInfo {x=0, y=0, confidence=29, raw=BsdImageObjRaw {left=38, top=85, width=32, height=14}}
+BsdImageObjInfo {x=0, y=0, confidence=20, raw=BsdImageObjRaw {left=157, top=93, width=26, height=16}}
+
+2025-01-02 15:56:36.725917
+BsdImageObjInfo {x=0, y=0, confidence=41, raw=BsdImageObjRaw {left=247, top=97, width=38, height=26}}
+BsdImageObjInfo {x=0, y=0, confidence=34, raw=BsdImageObjRaw {left=177, top=100, width=40, height=18}}
+BsdImageObjInfo {x=0, y=0, confidence=23, raw=BsdImageObjRaw {left=81, top=95, width=38, height=22}}
+BsdImageObjInfo {x=0, y=0, confidence=21, raw=BsdImageObjRaw {left=47, top=104, width=26, height=12}}
+BsdImageObjInfo {x=0, y=0, confidence=21, raw=BsdImageObjRaw {left=114, top=91, width=44, height=26}}
+
+2025-01-02 15:56:38.503484
+BsdImageObjInfo {x=0, y=0, confidence=41, raw=BsdImageObjRaw {left=247, top=97, width=38, height=26}}
+BsdImageObjInfo {x=0, y=0, confidence=34, raw=BsdImageObjRaw {left=177, top=100, width=40, height=18}}
+BsdImageObjInfo {x=0, y=0, confidence=23, raw=BsdImageObjRaw {left=81, top=95, width=38, height=22}}
+BsdImageObjInfo {x=0, y=0, confidence=21, raw=BsdImageObjRaw {left=47, top=104, width=26, height=12}}
+BsdImageObjInfo {x=0, y=0, confidence=21, raw=BsdImageObjRaw {left=114, top=91, width=44, height=26}}
+
+2025-01-02 15:56:39.266437
+BsdImageObjInfo {x=1, y=15, confidence=57, raw=BsdImageObjRaw {left=148, top=109, width=40, height=20}}
+BsdImageObjInfo {x=3, y=5, confidence=38, raw=BsdImageObjRaw {left=226, top=109, width=44, height=30}}
+BsdImageObjInfo {x=3, y=15, confidence=30, raw=BsdImageObjRaw {left=203, top=111, width=28, height=18}}
+BsdImageObjInfo {x=0, y=0, confidence=21, raw=BsdImageObjRaw {left=51, top=96, width=72, height=28}}
+BsdImageObjInfo {x=0, y=0, confidence=21, raw=BsdImageObjRaw {left=8, top=106, width=22, height=14}}
+BsdImageObjInfo {x=0, y=0, confidence=21, raw=BsdImageObjRaw {left=281, top=81, width=37, height=44}}
+
+2025-01-02 15:56:40.995261
+BsdImageObjInfo {x=1, y=15, confidence=57, raw=BsdImageObjRaw {left=148, top=109, width=40, height=20}}
+BsdImageObjInfo {x=3, y=5, confidence=38, raw=BsdImageObjRaw {left=226, top=109, width=44, height=30}}
+BsdImageObjInfo {x=3, y=15, confidence=30, raw=BsdImageObjRaw {left=203, top=111, width=28, height=18}}
+BsdImageObjInfo {x=0, y=0, confidence=21, raw=BsdImageObjRaw {left=51, top=96, width=72, height=28}}
+BsdImageObjInfo {x=0, y=0, confidence=21, raw=BsdImageObjRaw {left=8, top=106, width=22, height=14}}
+BsdImageObjInfo {x=0, y=0, confidence=21, raw=BsdImageObjRaw {left=281, top=81, width=37, height=44}}
+
+2025-01-02 15:56:41.360145
+BsdImageObjInfo {x=5, y=15, confidence=32, raw=BsdImageObjRaw {left=230, top=114, width=26, height=16}}
+BsdImageObjInfo {x=3, y=25, confidence=32, raw=BsdImageObjRaw {left=183, top=109, width=26, height=14}}
+BsdImageObjInfo {x=-5, y=5, confidence=22, raw=BsdImageObjRaw {left=1, top=114, width=16, height=34}}
+
+2025-01-02 15:56:42.056818
+BsdImageObjInfo {x=-3, y=5, confidence=45, raw=BsdImageObjRaw {left=1, top=107, width=36, height=44}}
+BsdImageObjInfo {x=0, y=0, confidence=31, raw=BsdImageObjRaw {left=203, top=98, width=24, height=16}}
+BsdImageObjInfo {x=0, y=0, confidence=21, raw=BsdImageObjRaw {left=248, top=102, width=26, height=14}}
+BsdImageObjInfo {x=0, y=0, confidence=20, raw=BsdImageObjRaw {left=270, top=103, width=48, height=22}}
+
+2025-01-02 15:56:42.261073
+BsdImageObjInfo {x=0, y=0, confidence=26, raw=BsdImageObjRaw {left=221, top=79, width=26, height=16}}
+BsdImageObjInfo {x=0, y=0, confidence=20, raw=BsdImageObjRaw {left=176, top=70, width=24, height=14}}
+
+2025-01-02 15:56:42.685543
+BsdImageObjInfo {x=0, y=0, confidence=38, raw=BsdImageObjRaw {left=157, top=82, width=24, height=16}}
+BsdImageObjInfo {x=0, y=0, confidence=38, raw=BsdImageObjRaw {left=225, top=95, width=44, height=20}}
+BsdImageObjInfo {x=0, y=0, confidence=23, raw=BsdImageObjRaw {left=73, top=77, width=28, height=18}}
+
+2025-01-02 15:56:42.960051
+BsdImageObjInfo {x=0, y=0, confidence=38, raw=BsdImageObjRaw {left=37, top=84, width=28, height=16}}
+BsdImageObjInfo {x=0, y=0, confidence=37, raw=BsdImageObjRaw {left=250, top=102, width=50, height=22}}
+BsdImageObjInfo {x=0, y=0, confidence=36, raw=BsdImageObjRaw {left=101, top=92, width=42, height=20}}
+BsdImageObjInfo {x=0, y=0, confidence=25, raw=BsdImageObjRaw {left=146, top=87, width=52, height=30}}
+BsdImageObjInfo {x=0, y=0, confidence=23, raw=BsdImageObjRaw {left=79, top=91, width=26, height=16}}
+
+2025-01-02 15:56:43.208664
+BsdImageObjInfo {x=0, y=0, confidence=38, raw=BsdImageObjRaw {left=37, top=84, width=28, height=16}}
+BsdImageObjInfo {x=0, y=0, confidence=37, raw=BsdImageObjRaw {left=250, top=102, width=50, height=22}}
+BsdImageObjInfo {x=0, y=0, confidence=36, raw=BsdImageObjRaw {left=101, top=92, width=42, height=20}}
+BsdImageObjInfo {x=0, y=0, confidence=25, raw=BsdImageObjRaw {left=146, top=87, width=52, height=30}}
+BsdImageObjInfo {x=0, y=0, confidence=23, raw=BsdImageObjRaw {left=79, top=91, width=26, height=16}}
+
+2025-01-02 15:56:43.544927
+BsdImageObjInfo {x=3, y=5, confidence=38, raw=BsdImageObjRaw {left=245, top=76, width=73, height=74}}
+BsdImageObjInfo {x=3, y=25, confidence=34, raw=BsdImageObjRaw {left=175, top=103, width=50, height=22}}
+BsdImageObjInfo {x=0, y=0, confidence=20, raw=BsdImageObjRaw {left=293, top=62, width=25, height=16}}
+
+2025-01-02 15:56:43.951445
+BsdImageObjInfo {x=0, y=0, confidence=38, raw=BsdImageObjRaw {left=125, top=72, width=46, height=20}}
+BsdImageObjInfo {x=0, y=0, confidence=27, raw=BsdImageObjRaw {left=183, top=76, width=32, height=20}}
+BsdImageObjInfo {x=0, y=0, confidence=26, raw=BsdImageObjRaw {left=208, top=72, width=50, height=38}}
+BsdImageObjInfo {x=0, y=0, confidence=24, raw=BsdImageObjRaw {left=287, top=40, width=31, height=54}}
+BsdImageObjInfo {x=0, y=0, confidence=20, raw=BsdImageObjRaw {left=247, top=47, width=50, height=44}}
+
+2025-01-02 15:56:44.160707
+BsdImageObjInfo {x=0, y=0, confidence=42, raw=BsdImageObjRaw {left=122, top=85, width=54, height=36}}
+BsdImageObjInfo {x=0, y=0, confidence=31, raw=BsdImageObjRaw {left=38, top=82, width=46, height=22}}
+BsdImageObjInfo {x=0, y=0, confidence=22, raw=BsdImageObjRaw {left=102, top=90, width=26, height=18}}
+
+2025-01-02 15:56:45.445022
+BsdImageObjInfo {x=3, y=15, confidence=47, raw=BsdImageObjRaw {left=178, top=84, width=68, height=48}}
+BsdImageObjInfo {x=0, y=0, confidence=32, raw=BsdImageObjRaw {left=95, top=91, width=46, height=18}}
+BsdImageObjInfo {x=0, y=0, confidence=26, raw=BsdImageObjRaw {left=278, top=51, width=40, height=58}}
+BsdImageObjInfo {x=0, y=0, confidence=21, raw=BsdImageObjRaw {left=158, top=94, width=28, height=20}}
+
+2025-01-02 15:56:45.571138
+BsdImageObjInfo {x=3, y=15, confidence=47, raw=BsdImageObjRaw {left=178, top=84, width=68, height=48}}
+BsdImageObjInfo {x=0, y=0, confidence=32, raw=BsdImageObjRaw {left=95, top=91, width=46, height=18}}
+BsdImageObjInfo {x=0, y=0, confidence=26, raw=BsdImageObjRaw {left=278, top=51, width=40, height=58}}
+BsdImageObjInfo {x=0, y=0, confidence=21, raw=BsdImageObjRaw {left=158, top=94, width=28, height=20}}
+
+2025-01-02 15:56:45.588854
+BsdImageObjInfo {x=0, y=0, confidence=41, raw=BsdImageObjRaw {left=146, top=80, width=44, height=22}}
+BsdImageObjInfo {x=0, y=0, confidence=29, raw=BsdImageObjRaw {left=225, top=66, width=84, height=62}}
+BsdImageObjInfo {x=0, y=0, confidence=23, raw=BsdImageObjRaw {left=212, top=89, width=30, height=20}}
+
+2025-01-02 15:56:45.772091
+BsdImageObjInfo {x=0, y=0, confidence=40, raw=BsdImageObjRaw {left=197, top=78, width=46, height=20}}
+BsdImageObjInfo {x=0, y=0, confidence=35, raw=BsdImageObjRaw {left=277, top=80, width=41, height=46}}
+BsdImageObjInfo {x=0, y=0, confidence=26, raw=BsdImageObjRaw {left=133, top=63, width=68, height=36}}
+
+2025-01-02 15:56:46.156394
+BsdImageObjInfo {x=0, y=0, confidence=34, raw=BsdImageObjRaw {left=222, top=80, width=56, height=24}}
+BsdImageObjInfo {x=0, y=0, confidence=32, raw=BsdImageObjRaw {left=3, top=66, width=22, height=16}}
+BsdImageObjInfo {x=0, y=0, confidence=24, raw=BsdImageObjRaw {left=279, top=50, width=39, height=60}}
+
+2025-01-02 15:56:46.312055
+BsdImageObjInfo {x=0, y=0, confidence=45, raw=BsdImageObjRaw {left=243, top=90, width=66, height=22}}
+BsdImageObjInfo {x=0, y=0, confidence=34, raw=BsdImageObjRaw {left=53, top=77, width=40, height=22}}
+BsdImageObjInfo {x=0, y=0, confidence=24, raw=BsdImageObjRaw {left=23, top=72, width=24, height=18}}
+
+2025-01-02 15:56:46.604452
+BsdImageObjInfo {x=0, y=0, confidence=45, raw=BsdImageObjRaw {left=260, top=93, width=58, height=28}}
+BsdImageObjInfo {x=0, y=0, confidence=41, raw=BsdImageObjRaw {left=39, top=76, width=26, height=18}}
+
+2025-01-02 15:56:46.765443
+BsdImageObjInfo {x=0, y=0, confidence=33, raw=BsdImageObjRaw {left=239, top=70, width=76, height=52}}
+
+2025-01-02 15:56:46.949939
+BsdImageObjInfo {x=0, y=0, confidence=35, raw=BsdImageObjRaw {left=1, top=64, width=38, height=24}}
+BsdImageObjInfo {x=0, y=0, confidence=26, raw=BsdImageObjRaw {left=148, top=75, width=38, height=24}}
+BsdImageObjInfo {x=0, y=0, confidence=25, raw=BsdImageObjRaw {left=113, top=68, width=24, height=18}}
+
+2025-01-02 15:56:47.235486
+BsdImageObjInfo {x=0, y=0, confidence=37, raw=BsdImageObjRaw {left=14, top=62, width=60, height=26}}
+BsdImageObjInfo {x=0, y=0, confidence=30, raw=BsdImageObjRaw {left=0, top=69, width=18, height=30}}
+BsdImageObjInfo {x=0, y=0, confidence=22, raw=BsdImageObjRaw {left=152, top=70, width=24, height=16}}
+BsdImageObjInfo {x=0, y=0, confidence=20, raw=BsdImageObjRaw {left=181, top=74, width=42, height=26}}
+
+2025-01-02 15:56:47.253819
+BsdRadarObjInfo {x=0, y=0, confidence=37, raw=BsdRadarObjRaw {distance=0, theta=0, velocity=0, power=0}}
+BsdRadarObjInfo {x=0, y=0, confidence=30, raw=BsdRadarObjRaw {distance=0, theta=0, velocity=0, power=0}}
+BsdRadarObjInfo {x=0, y=0, confidence=22, raw=BsdRadarObjRaw {distance=0, theta=0, velocity=0, power=0}}
+BsdRadarObjInfo {x=0, y=0, confidence=20, raw=BsdRadarObjRaw {distance=0, theta=0, velocity=0, power=0}}
+BsdImageObjInfo {x=0, y=0, confidence=37, raw=BsdImageObjRaw {left=14, top=62, width=60, height=26}}
+BsdImageObjInfo {x=0, y=0, confidence=30, raw=BsdImageObjRaw {left=0, top=69, width=18, height=30}}
+BsdImageObjInfo {x=0, y=0, confidence=22, raw=BsdImageObjRaw {left=152, top=70, width=24, height=16}}
+BsdImageObjInfo {x=0, y=0, confidence=20, raw=BsdImageObjRaw {left=181, top=74, width=42, height=26}}
+
+2025-01-02 15:56:48.578977
+BsdImageObjInfo {x=0, y=0, confidence=49, raw=BsdImageObjRaw {left=33, top=93, width=50, height=20}}
+BsdImageObjInfo {x=0, y=0, confidence=47, raw=BsdImageObjRaw {left=188, top=95, width=24, height=18}}
+BsdImageObjInfo {x=0, y=0, confidence=40, raw=BsdImageObjRaw {left=0, top=97, width=36, height=32}}
+BsdImageObjInfo {x=0, y=0, confidence=27, raw=BsdImageObjRaw {left=68, top=93, width=38, height=20}}
+
+2025-01-02 15:56:48.990958
+BsdImageObjInfo {x=-3, y=5, confidence=64, raw=BsdImageObjRaw {left=2, top=123, width=82, height=26}}
+BsdImageObjInfo {x=1, y=5, confidence=33, raw=BsdImageObjRaw {left=197, top=138, width=52, height=30}}
+BsdImageObjInfo {x=1, y=5, confidence=23, raw=BsdImageObjRaw {left=159, top=133, width=24, height=18}}
+
+2025-01-02 15:56:49.482634
+BsdImageObjInfo {x=1, y=5, confidence=44, raw=BsdImageObjRaw {left=184, top=126, width=24, height=20}}
+BsdImageObjInfo {x=-3, y=5, confidence=37, raw=BsdImageObjRaw {left=27, top=119, width=86, height=24}}
+BsdImageObjInfo {x=1, y=5, confidence=29, raw=BsdImageObjRaw {left=220, top=133, width=54, height=30}}
+BsdImageObjInfo {x=-3, y=5, confidence=23, raw=BsdImageObjRaw {left=0, top=123, width=12, height=32}}
+
+2025-01-02 15:56:49.595664
+BsdImageObjInfo {x=0, y=0, confidence=38, raw=BsdImageObjRaw {left=1, top=107, width=50, height=28}}
+BsdImageObjInfo {x=1, y=5, confidence=36, raw=BsdImageObjRaw {left=186, top=120, width=58, height=34}}
+BsdImageObjInfo {x=-1, y=5, confidence=27, raw=BsdImageObjRaw {left=149, top=117, width=26, height=22}}
+BsdImageObjInfo {x=-5, y=15, confidence=21, raw=BsdImageObjRaw {left=32, top=112, width=40, height=22}}
+
+2025-01-02 15:56:49.782990
+BsdImageObjInfo {x=-5, y=15, confidence=43, raw=BsdImageObjRaw {left=1, top=112, width=48, height=24}}
+BsdImageObjInfo {x=1, y=5, confidence=23, raw=BsdImageObjRaw {left=178, top=123, width=60, height=34}}
+BsdImageObjInfo {x=-1, y=5, confidence=23, raw=BsdImageObjRaw {left=142, top=119, width=24, height=20}}
+
+2025-01-02 15:56:50.010870
+BsdImageObjInfo {x=0, y=0, confidence=35, raw=BsdImageObjRaw {left=1, top=111, width=48, height=22}}
+BsdImageObjInfo {x=-1, y=15, confidence=25, raw=BsdImageObjRaw {left=143, top=115, width=24, height=20}}
+
+2025-01-02 15:56:50.191777
+BsdImageObjInfo {x=0, y=0, confidence=35, raw=BsdImageObjRaw {left=1, top=111, width=48, height=22}}
+BsdImageObjInfo {x=-1, y=15, confidence=25, raw=BsdImageObjRaw {left=143, top=115, width=24, height=20}}
+
+2025-01-02 15:56:50.430204
+BsdImageObjInfo {x=0, y=0, confidence=46, raw=BsdImageObjRaw {left=1, top=107, width=48, height=28}}
+BsdImageObjInfo {x=-1, y=5, confidence=30, raw=BsdImageObjRaw {left=149, top=115, width=28, height=22}}
+BsdImageObjInfo {x=1, y=5, confidence=21, raw=BsdImageObjRaw {left=184, top=122, width=62, height=32}}
+
+2025-01-02 15:56:50.583136
+BsdImageObjInfo {x=-5, y=15, confidence=36, raw=BsdImageObjRaw {left=2, top=114, width=40, height=22}}
+BsdImageObjInfo {x=-1, y=5, confidence=23, raw=BsdImageObjRaw {left=127, top=119, width=28, height=20}}
+
