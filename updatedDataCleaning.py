@@ -3,6 +3,7 @@ import re
 import shutil  # NEW: to remove existing output folder
 import pandas as pd
 from typing import Dict, List
+import sys
 
 def parse_line(line: str) -> Dict:
     if "BsdRadarObjInfo" in line:
@@ -207,29 +208,65 @@ def export_comparison_to_excel(df_summary: pd.DataFrame, df_matched: pd.DataFram
         df_summary.to_excel(writer, sheet_name='matched_data', index=False)
         df_matched.to_excel(writer, sheet_name='unmatched_data', index=False)
 
+
+def get_input_folder():
+    # The folder containing the .exe at runtime
+    if getattr(sys, 'frozen', False):
+        exe_dir = os.path.dirname(sys.executable)
+    else:
+        exe_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # We'll assume there's an "input" folder right next to the .exe
+    input_path = os.path.join(exe_dir, 'input')
+    return input_path
+
+def get_output_folder():
+    """
+    Returns a path to 'output' folder located in the same directory as the .exe.
+    If the folder already exists, it is removed.
+    Then a fresh 'output' folder is created.
+    """
+    # The directory containing the .exe (or script if not frozen)
+    if getattr(sys, 'frozen', False):
+        exe_dir = os.path.dirname(sys.executable)
+    else:
+        # If not frozen, we can use the directory of this .py file
+        exe_dir = os.path.dirname(os.path.abspath(__file__))
+
+    output_folder_path = os.path.join(exe_dir, "output")
+
+    if os.path.exists(output_folder_path):
+        shutil.rmtree(output_folder_path)  # remove all old files/folders inside
+
+    os.makedirs(output_folder_path, exist_ok=True)
+    return output_folder_path
+
+
 def main():
     # NEW: Remove existing "output" folder (if any), then recreate it
-    output_dir = "output"
-    if os.path.exists(output_dir):
-        shutil.rmtree(output_dir)  # remove all old files/folders inside
-    os.makedirs(output_dir, exist_ok=True)
+    output_folder_path = get_output_folder()
+    if os.path.exists(output_folder_path):
+        shutil.rmtree(output_folder_path)  # remove all old files/folders inside
+    os.makedirs(output_folder_path, exist_ok=True)
     
     # 1) Read logs
-    df_radar, df_image = read_logs_from_folder("input")
+    input_folder_path = get_input_folder()
+    print()
+    df_radar, df_image = read_logs_from_folder(input_folder_path)
     
     # 2) Sort & export => put into "output/" folder
-    all_data_path = os.path.join(output_dir, "all_data_sorted.xlsx")
+    all_data_path = os.path.join(output_folder_path, "all_data_sorted.xlsx")
     sort_and_export(df_radar, df_image, all_data_path)
     
     # 3) Filter radar & export => put into "output/" folder
     filtered_dict = filter_radar_entries(df_radar)
-    filtered_radar_path = os.path.join(output_dir, "filtered_radar.xlsx")
+    filtered_radar_path = os.path.join(output_folder_path, "filtered_radar.xlsx")
     export_filtered_radar(filtered_dict, filtered_radar_path)
     
     # 4) Compare radar vs image => put into "output/" folder
     if not df_radar.empty and not df_image.empty:
         df_matched_timeframes, df_unmatched_timeframes = compare_radar_image(df_radar, df_image)
-        comparison_path = os.path.join(output_dir, "radar_image_comparison.xlsx")
+        comparison_path = os.path.join(output_folder_path, "radar_image_comparison.xlsx")
         export_comparison_to_excel(df_matched_timeframes, df_unmatched_timeframes, comparison_path)
     else:
         print("No comparison made as there is no image or radar data")
