@@ -4,43 +4,130 @@ import shutil  # NEW: to remove existing output folder
 import pandas as pd
 from typing import Dict, List
 import sys
-
+from openpyxl.utils import get_column_letter
 def parse_line(line: str) -> Dict:
+    # if "BsdRadarObjInfo" in line:
+    #     obj_type = "radar"
+    # elif "BsdImageObjInfo" in line:
+    #     obj_type = "image"
+    # else:
+    #     return {}
+    
+    # x_match = re.search(r"x=(-?\d+)", line)
+    # y_match = re.search(r"y=(-?\d+)", line)
+    # conf_match = re.search(r"confidence=(\d+)", line)
+    # # prob change this line to include the raw data as their own columns
+    # raw_data = {}
+    # # searches for raw data based on the obj type
+    # if obj_type == "radar":    
+    #     raw_search = re.search(r"raw=BsdRadarObjRaw\s*\{([^}]*)\}", line)
+    #     if raw_search:
+    #         #raw data
+    #         raw_content = raw_search.group(1)
+    #         for item in raw_content.split(","):
+    #             k, v = item.strip().split("=")
+    #             raw_data[k.strip()] = int(v.strip())
+    # else:
+    #     raw_search = re.search(r"raw=BsdImageObjRaw\s*\{([^}]*)\}", line)
+    #     if raw_search:
+    #         raw_content = raw_search.group(1)
+    #         for item in raw_content.split(","):
+    #             k, v = item.strip().split("=")
+    #             raw_data[k.strip()] = int(v.strip())
+    
+    # return {
+    #     "type": obj_type,
+    #     "x": int(x_match.group(1)) if x_match else None,
+    #     "y": int(y_match.group(1)) if y_match else None,
+    #     "confidence": int(conf_match.group(1)) if conf_match else None,
+    #     # this line is a bit sussy, i think i can just transform raw data into their own fields 
+    #     "raw": raw_data
+    # }
+    # 1) Determine object type
     if "BsdRadarObjInfo" in line:
         obj_type = "radar"
     elif "BsdImageObjInfo" in line:
         obj_type = "image"
     else:
         return {}
-    
+
+    # 2) Extract x, y, confidence
     x_match = re.search(r"x=(-?\d+)", line)
     y_match = re.search(r"y=(-?\d+)", line)
     conf_match = re.search(r"confidence=(\d+)", line)
-    # prob change this line to include the raw data as their own columns
-    raw_data = {}
+
+    x_val = int(x_match.group(1)) if x_match else None
+    y_val = int(y_match.group(1)) if y_match else None
+    confidence_val = int(conf_match.group(1)) if conf_match else None
+
     if obj_type == "radar":
+        # 3a) Radar object
+        distance = None
+        theta = None
+        velocity = None
+        power = None
+        
         raw_search = re.search(r"raw=BsdRadarObjRaw\s*\{([^}]*)\}", line)
         if raw_search:
             raw_content = raw_search.group(1)
-            for item in raw_content.split(","):
-                k, v = item.strip().split("=")
-                raw_data[k.strip()] = int(v.strip())
+            fields = [item.strip() for item in raw_content.split(",")]
+            for f in fields:
+                k, v = f.split("=")
+                k, v = k.strip(), v.strip()
+                if k == "distance":
+                    distance = int(v)
+                elif k == "theta":
+                    theta = int(v)
+                elif k == "velocity":
+                    velocity = int(v)
+                elif k == "power":
+                    power = int(v)
+
+        return {
+            "type": "radar",
+            "x": x_val,
+            "y": y_val,
+            "confidence": confidence_val,
+            "distance": distance,
+            "theta": theta,
+            "velocity": velocity,
+            "power": power
+        }
+
     else:
+        # 3b) Image object
+        left = None
+        top = None
+        width_ = None
+        height_ = None
+        
         raw_search = re.search(r"raw=BsdImageObjRaw\s*\{([^}]*)\}", line)
         if raw_search:
             raw_content = raw_search.group(1)
-            for item in raw_content.split(","):
-                k, v = item.strip().split("=")
-                raw_data[k.strip()] = int(v.strip())
-    
-    return {
-        "type": obj_type,
-        "x": int(x_match.group(1)) if x_match else None,
-        "y": int(y_match.group(1)) if y_match else None,
-        "confidence": int(conf_match.group(1)) if conf_match else None,
-        # this line is a bit sussy, i think i can just transform raw data into their own fields 
-        "raw": raw_data
-    }
+            fields = [item.strip() for item in raw_content.split(",")]
+            for f in fields:
+                k, v = f.split("=")
+                k, v = k.strip(), v.strip()
+                if k == "left":
+                    left = int(v)
+                elif k == "top":
+                    top = int(v)
+                elif k == "width":
+                    width_ = int(v)
+                elif k == "height":
+                    height_ = int(v)
+
+        return {
+            "type": "image",
+            "x": x_val,
+            "y": y_val,
+            "confidence": confidence_val,
+            "left": left,
+            "top": top,
+            "width": width_,
+            "height": height_
+        }
+
 
 def read_logs_from_folder(folder_path: str):
     radar_records = []
@@ -72,21 +159,53 @@ def read_logs_from_folder(folder_path: str):
     df_image = pd.DataFrame(image_records)
     return df_radar, df_image
 
+def adjust_excel(writer,sheet_name):
+    ws = writer.sheets[sheet_name]  # Get the worksheet object
+    # for col in ws.columns:
+    #     ws.column_dimensions[col[1].column_letter].auto_size = True
+    column_widths = []
+    for row in ws.rows:
+        for i, cell in enumerate(row):
+            if len(column_widths) > i:
+                if len(str(cell)) > column_widths[i]:
+                    column_widths[i] = len(str(cell))
+            else:
+                column_widths += [len(str(cell))]
+    
+    for i, column_width in enumerate(column_widths,1):  # ,1 to start at 1
+        ws.column_dimensions[get_column_letter(i)].width = column_width
+    # for col in ws.columns:
+    #     max_length = 0
+    #     column = get_column_letter(col[0].column)  # Get the column name
+    #     # Since Openpyxl 2.6, the column name is  ".column_letter" as .column became the column number (1-based)
+    #     for cell in col:
+    #         try:  # Necessary to avoid error on empty cells
+    #             if len(str(cell.value)) > max_length:
+    #                 max_length = len(cell.value)
+    #         except:
+    #             pass
+    #     adjusted_width = (max_length ) *5 
+    #     ws.column_dimensions[column].width = adjusted_width
+
 def sort_and_export(df_radar: pd.DataFrame, df_image: pd.DataFrame, output_excel_path: str):
-    if not df_radar.empty: 
-        df_radar['time'] = pd.to_datetime(df_radar['time'])
-        df_radar_sorted = df_radar.sort_values(by=['time','y'])
-        with pd.ExcelWriter(output_excel_path, engine='openpyxl') as writer:
+    with pd.ExcelWriter(output_excel_path, engine='openpyxl') as writer:
+        # 1) Radar data
+        if not df_radar.empty:
+            df_radar['time'] = pd.to_datetime(df_radar['time'])
+            df_radar_sorted = df_radar.sort_values(by=['time', 'y'])
             df_radar_sorted.to_excel(writer, sheet_name='radar_data', index=False)
-    else:
-        print("There is no radar data")
-    if not df_image.empty:
-        df_image['time'] = pd.to_datetime(df_image['time'])
-        df_image_sorted = df_image.sort_values(by=['time','y'])
-        with pd.ExcelWriter(output_excel_path, engine='openpyxl') as writer:
+        else:
+            print("There is no radar data")
+        adjust_excel(writer, "radar_data")
+        # 2) Image data
+        if not df_image.empty:
+            df_image['time'] = pd.to_datetime(df_image['time'])
+            df_image_sorted = df_image.sort_values(by=['time', 'y'])
             df_image_sorted.to_excel(writer, sheet_name='image_data', index=False)
-    else:
-        print("There is no image data")
+        else:
+            print("There is no image data")
+        adjust_excel(writer,'image_data')
+        
     
 
  
@@ -96,7 +215,7 @@ def filter_radar_entries(df_radar: pd.DataFrame) -> dict:
         print("No radar data detected: returning no data")
         return 0
     else:
-        df_radar['velocity'] = df_radar['raw'].apply(lambda d: d.get('velocity', None) if isinstance(d, dict) else None)
+        # df_radar['velocity'] = df_radar['raw'].apply(lambda d: d.get('velocity', None) if isinstance(d, dict) else None)
         
         cat1 = df_radar[(df_radar['y'] < 20) & (df_radar['velocity'] != 0)]
         cat2 = df_radar[(df_radar['y'] >= 20) & (df_radar['y'] <= 80) & (df_radar['velocity'] != 0)]
@@ -118,6 +237,7 @@ def export_filtered_radar(filtered_dict: dict, output_excel_path: str):
             sheet_name = cat_name.replace("(", "").replace(")", "").replace(" ", "_").replace("≤", "LE").replace("≥", "GE").replace(">", "GT").replace("<", "LT").replace("=", "EQ")
             print(f"{cat_name}: {len(df_cat)} entries")
             df_cat.to_excel(writer, sheet_name=sheet_name[:30], index=False)
+            adjust_excel(writer,sheet_name[:30])
 
 def compare_radar_image(df_radar: pd.DataFrame, df_image: pd.DataFrame):
     """
@@ -207,6 +327,8 @@ def export_comparison_to_excel(df_summary: pd.DataFrame, df_matched: pd.DataFram
     with pd.ExcelWriter(output_excel_path, engine='openpyxl') as writer:
         df_summary.to_excel(writer, sheet_name='matched_data', index=False)
         df_matched.to_excel(writer, sheet_name='unmatched_data', index=False)
+        adjust_excel(writer, 'matched_data')
+        adjust_excel(writer, 'unmatched_data')
 
 
 def get_input_folder():
@@ -271,7 +393,7 @@ def main():
     else:
         print("No comparison made as there is no image or radar data")
 
-    input("Press ENTER to close this window...")
+    os.system("pause")
 
 
 if __name__ == "__main__":
