@@ -271,5 +271,8 @@ def main():
     else:
         print("No comparison made as there is no image or radar data")
 
+    input("Press ENTER to close this window...")
+
+
 if __name__ == "__main__":
     main()
