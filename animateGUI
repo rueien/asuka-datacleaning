@@ -1,0 +1,244 @@
+import matplotlib.pyplot as plt
+from matplotlib.widgets import Button, TextBox
+import pandas as pd
+
+
+class XYAnimatorGUI:
+    def __init__(self, df_image, df_radar):
+        # Ensure time is datetime and unify into integer steps
+        df_image['time'] = pd.to_datetime(df_image['time'])
+        df_radar['time'] = pd.to_datetime(df_radar['time'])
+
+        all_times = sorted(set(df_image['time'].unique()) | set(df_radar['time'].unique()))
+        self.time_to_idx = {t: i for i, t in enumerate(all_times)}
+        df_image['t_index'] = df_image['time'].map(self.time_to_idx)
+        df_radar['t_index'] = df_radar['time'].map(self.time_to_idx)
+
+        self.df_image = df_image
+        self.df_radar = df_radar
+
+        self.max_t = len(all_times)   # total frames
+        self.current_t = 0           # current frame index
+        self.paused = True          # ADDED OR CHANGED: Track if animation is paused
+        self.show_coords = False
+        self.show_past = True
+        self.past_img_frames = []
+        self.past_rad_frames = []
+
+        # Figure
+        self.fig = plt.figure(figsize=(12, 8))
+
+        # Subplots for image, radar, combined
+        self.ax_img = plt.subplot2grid((2, 3), (0, 0))
+        self.ax_rad = plt.subplot2grid((2, 3), (0, 1))
+        self.ax_both = plt.subplot2grid((2, 3), (0, 2))
+
+        # We want to place manual widget axes on the second row
+        # (Positions in figure coordinates)
+        align_left = 0.11
+        alight_top = 0.4
+        self.ax_toggle_coords = plt.axes([align_left, alight_top, 0.12, 0.05])
+        self.btn_toggle_coords = Button(self.ax_toggle_coords, 'Toggle Coords')
+        self.btn_toggle_coords.on_clicked(self.on_toggle_coords)
+
+        self.ax_toggle_past = plt.axes([align_left, alight_top-0.1, 0.12, 0.05])
+        self.btn_toggle_past = Button(self.ax_toggle_past, 'Toggle Past')
+        self.btn_toggle_past.on_clicked(self.on_toggle_past)
+
+        self.ax_text_start = plt.axes([align_left+0.17, alight_top, 0.1, 0.05])
+        self.txt_start = TextBox(self.ax_text_start, 'Start:', initial='0')
+
+        self.ax_text_end = plt.axes([align_left+0.3, alight_top, 0.1, 0.05])
+        self.txt_end = TextBox(self.ax_text_end, 'End:', initial='')
+
+        self.ax_go_button = plt.axes([align_left+0.45, alight_top, 0.07, 0.06])
+        self.btn_go = Button(self.ax_go_button, 'Go')
+        self.btn_go.on_clicked(self.on_go_clicked)
+
+        # NEW: A small "textbox" or label to display "Past: ON/OFF"
+        self.ax_past_status = plt.axes([align_left+0.17, alight_top-0.1, 0.1, 0.06])
+        self.tb_past_status = TextBox(self.ax_past_status, 'Past', initial='ON')
+        # Timer for auto-advancing frames
+        self.ani_interval = 500  # ms
+        self.timer = self.fig.canvas.new_timer(interval=self.ani_interval)
+        self.timer.add_callback(self.update)
+        self.timer.start()
+
+        # ADDED OR CHANGED: Connect key events
+        self.fig.canvas.mpl_connect('key_press_event', self.on_key_press)
+
+        # Set axis ranges & vertical lines
+        self.x_range = (-10, 10)
+        self.y_range = (-10, 10)
+        self.x_lines = [0, 3, 6, -3, -6]
+
+        self.draw_current()
+
+    # --- NEW: Key-press event handler ---
+    def on_key_press(self, event):
+        """
+        Allows navigation & pause/resume using the keyboard:
+          - Left arrow: step backward
+          - Right arrow: step forward
+          - Space: pause/resume
+        """
+        if event.key == 'left':
+            self.step_backward()
+        elif event.key == 'right':
+            self.step_forward()
+        elif event.key == ' ':
+            self.paused = not self.paused
+
+    # --- ARROW KEY UTILITY METHODS (no GUI buttons) ---
+    def step_backward(self):
+        self.paused = True  # freeze auto-play
+        self.current_t = max(0, self.current_t - 1)
+        self.draw_current()
+
+    def step_forward(self):
+        self.paused = True
+        self.current_t = min(self.current_t + 1, self.max_t - 1)
+        self.draw_current()
+
+    # --- WIDGET CALLBACKS ---
+    def on_toggle_coords(self, event):
+        self.show_coords = not self.show_coords
+        self.draw_current()
+
+    def on_toggle_past(self, event):
+        self.show_past = not self.show_past
+        if not self.show_past:
+            self.past_img_frames.clear()
+            self.past_rad_frames.clear()
+
+        # Update the textbox
+        if self.show_past:
+            self.tb_past_status.set_val("ON")
+        else:
+            self.tb_past_status.set_val("OFF")
+        self.draw_current()
+
+    def on_go_clicked(self, event):
+        """
+        Reads the 'Start' and 'End' text boxes.
+        If 'End' is empty, just jump to 'Start'.
+        Else, animate from start to end.
+        """
+        start_str = self.txt_start.text.strip()
+        end_str = self.txt_end.text.strip()
+
+        # Try converting start
+        try:
+            start_i = int(start_str)
+        except ValueError:
+            print("Invalid Start time; ignoring.")
+            return
+
+        start_i = max(0, min(start_i, self.max_t - 1))
+
+        if not end_str:
+            self.current_t = start_i
+            self.draw_current()
+            return
+
+        # parse end
+        try:
+            end_i = int(end_str)
+            end_i = max(0, min(end_i, self.max_t - 1))
+        except ValueError:
+            print("Invalid End time; ignoring.")
+            return
+
+        self.paused = True
+        if start_i <= end_i:
+            rng = range(start_i, end_i + 1)
+        else:
+            rng = range(start_i, end_i - 1, -1)
+
+        for i in rng:
+            self.current_t = i
+            self.draw_current()
+            plt.pause(0.5)
+
+    # --- ANIMATION LOGIC ---
+    def update(self):
+        if not self.paused:
+            self.current_t += 1
+            if self.current_t >= self.max_t:
+                self.current_t = self.max_t - 1
+                self.paused = True
+            self.draw_current()
+
+    # --- DRAWING ---
+    def clear_axes(self):
+        for ax in (self.ax_img, self.ax_rad, self.ax_both):
+            ax.cla()
+            for xv in self.x_lines:
+                ax.axvline(x=xv, color='black', linestyle='--', alpha=0.5)
+            ax.set_xlim(self.x_range)
+            ax.set_ylim(self.y_range)
+
+    def draw_current(self):
+        self.clear_axes()
+        sub_img = self.df_image[self.df_image['t_index'] == self.current_t]
+        sub_rad = self.df_radar[self.df_radar['t_index'] == self.current_t]
+
+        if self.show_past:
+            self.past_img_frames.append(sub_img)
+            self.past_rad_frames.append(sub_rad)
+            all_img = pd.concat(self.past_img_frames) if self.past_img_frames else sub_img
+            all_rad = pd.concat(self.past_rad_frames) if self.past_rad_frames else sub_rad
+        else:
+            all_img = sub_img
+            all_rad = sub_rad
+
+        self.ax_img.scatter(all_img['x'], all_img['y'], color='blue')
+        self.ax_rad.scatter(all_rad['x'], all_rad['y'], color='red')
+        self.ax_both.scatter(all_img['x'], all_img['y'], color='blue')
+        self.ax_both.scatter(all_rad['x'], all_rad['y'], color='red')
+
+        if self.show_coords:
+            for _, row in all_img.iterrows():
+                self.ax_img.text(row['x'], row['y'], f"({row['x']},{row['y']})", color='blue', fontsize=8)
+                self.ax_both.text(row['x'], row['y'], f"({row['x']},{row['y']})", color='blue', fontsize=8)
+            for _, row in all_rad.iterrows():
+                self.ax_rad.text(row['x'], row['y'], f"({row['x']},{row['y']})", color='red', fontsize=8)
+                self.ax_both.text(row['x'], row['y'], f"({row['x']},{row['y']})", color='red', fontsize=8)
+
+        self.ax_img.set_title(f"Image Only (t={self.current_t})")
+        self.ax_rad.set_title(f"Radar Only (t={self.current_t})")
+        self.ax_both.set_title(f"Combined (t={self.current_t})")
+        self.fig.canvas.draw_idle()
+
+def main():
+    # Example minimal data
+    data_img = {
+        'time': [
+            '2025-01-02 15:53:39.000',
+            '2025-01-02 15:53:39.100',
+            '2025-01-02 15:53:39.200',
+            '2025-01-02 15:53:39.300',
+            '2025-01-02 15:53:40.000'
+        ],
+        'x': [0, 1, 2, 3, 4],
+        'y': [5, 4, 3, 2, 1]
+    }
+    data_rad = {
+        'time': [
+            '2025-01-02 15:53:39.000',
+            '2025-01-02 15:53:39.050',
+            '2025-01-02 15:53:39.150',
+            '2025-01-02 15:53:39.250',
+            '2025-01-02 15:53:39.350'
+        ],
+        'x': [0, -1, -2, -3, -4],
+        'y': [5, 5, 4, 3, 2]
+    }
+    df_image = pd.DataFrame(data_img)
+    df_radar = pd.DataFrame(data_rad)
+
+    animator = XYAnimatorGUI(df_image, df_radar)
+    plt.show()
+
+if __name__ == "__main__":
+    main()
