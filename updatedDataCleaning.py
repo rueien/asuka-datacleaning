@@ -5,44 +5,13 @@ import pandas as pd
 from typing import Dict, List
 import sys
 from openpyxl.utils import get_column_letter
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+import pandas as pd
+from XYAnimator import test
+
+
 def parse_line(line: str) -> Dict:
-    # if "BsdRadarObjInfo" in line:
-    #     obj_type = "radar"
-    # elif "BsdImageObjInfo" in line:
-    #     obj_type = "image"
-    # else:
-    #     return {}
-    
-    # x_match = re.search(r"x=(-?\d+)", line)
-    # y_match = re.search(r"y=(-?\d+)", line)
-    # conf_match = re.search(r"confidence=(\d+)", line)
-    # # prob change this line to include the raw data as their own columns
-    # raw_data = {}
-    # # searches for raw data based on the obj type
-    # if obj_type == "radar":    
-    #     raw_search = re.search(r"raw=BsdRadarObjRaw\s*\{([^}]*)\}", line)
-    #     if raw_search:
-    #         #raw data
-    #         raw_content = raw_search.group(1)
-    #         for item in raw_content.split(","):
-    #             k, v = item.strip().split("=")
-    #             raw_data[k.strip()] = int(v.strip())
-    # else:
-    #     raw_search = re.search(r"raw=BsdImageObjRaw\s*\{([^}]*)\}", line)
-    #     if raw_search:
-    #         raw_content = raw_search.group(1)
-    #         for item in raw_content.split(","):
-    #             k, v = item.strip().split("=")
-    #             raw_data[k.strip()] = int(v.strip())
-    
-    # return {
-    #     "type": obj_type,
-    #     "x": int(x_match.group(1)) if x_match else None,
-    #     "y": int(y_match.group(1)) if y_match else None,
-    #     "confidence": int(conf_match.group(1)) if conf_match else None,
-    #     # this line is a bit sussy, i think i can just transform raw data into their own fields 
-    #     "raw": raw_data
-    # }
     # 1) Determine object type
     if "BsdRadarObjInfo" in line:
         obj_type = "radar"
@@ -128,7 +97,6 @@ def parse_line(line: str) -> Dict:
             "height": height_
         }
 
-
 def read_logs_from_folder(folder_path: str):
     radar_records = []
     image_records = []
@@ -174,18 +142,6 @@ def adjust_excel(writer,sheet_name):
     
     for i, column_width in enumerate(column_widths,1):  # ,1 to start at 1
         ws.column_dimensions[get_column_letter(i)].width = column_width
-    # for col in ws.columns:
-    #     max_length = 0
-    #     column = get_column_letter(col[0].column)  # Get the column name
-    #     # Since Openpyxl 2.6, the column name is  ".column_letter" as .column became the column number (1-based)
-    #     for cell in col:
-    #         try:  # Necessary to avoid error on empty cells
-    #             if len(str(cell.value)) > max_length:
-    #                 max_length = len(cell.value)
-    #         except:
-    #             pass
-    #     adjusted_width = (max_length ) *5 
-    #     ws.column_dimensions[column].width = adjusted_width
 
 def sort_and_export(df_radar: pd.DataFrame, df_image: pd.DataFrame, output_excel_path: str):
     with pd.ExcelWriter(output_excel_path, engine='openpyxl') as writer:
@@ -204,11 +160,7 @@ def sort_and_export(df_radar: pd.DataFrame, df_image: pd.DataFrame, output_excel
             df_image_sorted.to_excel(writer, sheet_name='image_data', index=False)
         else:
             print("There is no image data")
-        adjust_excel(writer,'image_data')
-        
-    
-
- 
+        adjust_excel(writer,'image_data') 
 
 def filter_radar_entries(df_radar: pd.DataFrame) -> dict:
     if df_radar.empty:
@@ -330,7 +282,6 @@ def export_comparison_to_excel(df_summary: pd.DataFrame, df_matched: pd.DataFram
         adjust_excel(writer, 'matched_data')
         adjust_excel(writer, 'unmatched_data')
 
-
 def get_input_folder():
     # The folder containing the .exe at runtime
     if getattr(sys, 'frozen', False):
@@ -363,8 +314,50 @@ def get_output_folder():
     os.makedirs(output_folder_path, exist_ok=True)
     return output_folder_path
 
+def animate_xy(df_image, df_radar):
+    times = sorted(set(df_image['time'].unique()).union(df_radar['time'].unique()))
+    
+    fig, (ax_img, ax_rad, ax_both) = plt.subplots(1, 3, figsize=(15, 5))
+    lines_x = [0, 3, 6, -3, -6]
+    
+    def setup_ax(ax):
+        ax.set_xlim(-6, 6)
+        ax.set_ylim(-1, 175)
+        for xv in lines_x:
+            ax.axvline(x=xv, color='black', linestyle='--', alpha=0.5)
+    
+    def update(frame):
+        t = times[frame]
+        sub_img = df_image[df_image['time'] == t]
+        sub_rad = df_radar[df_radar['time'] == t]
+        
+        for ax in (ax_img, ax_rad, ax_both):
+            ax.cla()
+            setup_ax(ax)
+        
+        ax_img.scatter(sub_img['x'], sub_img['y'], c='blue')
+        ax_rad.scatter(sub_rad['x'], sub_rad['y'], c='red')
+        
+        ax_both.scatter(sub_img['x'], sub_img['y'], c='blue')
+        ax_both.scatter(sub_rad['x'], sub_rad['y'], c='red')
+        
+        for _, row in sub_img.iterrows():
+            ax_img.text(row['x'], row['y'], f"({row['x']},{row['y']})", color='blue', fontsize=8)
+            ax_both.text(row['x'], row['y'], f"({row['x']},{row['y']})", color='blue', fontsize=8)
+        for _, row in sub_rad.iterrows():
+            ax_rad.text(row['x'], row['y'], f"({row['x']},{row['y']})", color='red', fontsize=8)
+            ax_both.text(row['x'], row['y'], f"({row['x']},{row['y']})", color='red', fontsize=8)
+
+        ax_img.set_title(f"Image Only (t={t})")
+        ax_rad.set_title(f"Radar Only (t={t})")
+        ax_both.set_title(f"Combined (t={t})")
+
+    ani = animation.FuncAnimation(fig, update, frames=len(times), interval=500, repeat=False)
+    plt.show()
+
 
 def main():
+    test()
     # NEW: Remove existing "output" folder (if any), then recreate it
     output_folder_path = get_output_folder()
     if os.path.exists(output_folder_path):
@@ -392,8 +385,10 @@ def main():
         export_comparison_to_excel(df_matched_timeframes, df_unmatched_timeframes, comparison_path)
     else:
         print("No comparison made as there is no image or radar data")
+    # XYAnimator.XYAnimatorGUI(df_image, df_radar)
 
     os.system("pause")
+
 
 
 if __name__ == "__main__":
